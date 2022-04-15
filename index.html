@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budget App</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .active {
+            opacity: 100% !important;
+            /* making it important so that no one can ride over when a class as active is given */
+        }
+
+        /* adding hide class  */
+
+        .hide {
+            /* this hides and even deserve the place acquired by an element */
+            display: none;
+        }
+
+
+        #all #list li #edit {
+            display: none;
+
+        }
+        #all #list li  {
+            grid-template-columns: 4fr 1fr;
+
+        }
+
+        
+        li {
+
+            margin: 4px;
+            display: grid;
+            /* i.e initializing grid layout */
+            /* that means the items inside this container now became grid items */
+            grid-template-columns: 5fr 1fr 1fr;
+        }
+
+        .toggle{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            margin-left:0px;
+            text-align: center;
+        }
+
+        li .entry{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            font-size: 20px;
+        }
+        .icon {
+            height: 25px;
+            width: 25px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="budget-container">
+
+        <div class="app-title">
+            <a href="">Budget <b>App</b></a>
+        </div>
+
+        <div class="budget-header">
+
+            <div class="balance">
+                <div class="title">Balance</div>
+                <div class="value"><small>Rs.</small>0</div> <!-- grabbed by balanceEl -->
+            </div>
+
+            <div class="account">
+
+                <div class="income">
+                    <div class="title">
+                        Income
+                    </div>
+                    <div class="income-total"><small>Rs.</small>0</div> <!-- grabbed by incomeTotalEl -->
+                </div>
+                <div class="chart"></div>
+                <div class="outcome">
+                    <div class="title">
+                        Expense
+                    </div>
+                    <div class="outcome-total"><small>Rs.</small>0</div> <!-- grabbed by expenseTotalEl -->
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="budget-dashboard">
+
+            <div class="dash-title">
+                Dashboard
+
+                <div class="toggle">
+                    <div class="tab1">Expense</div> <!-- grabbed by expenseBtn -->
+                    <div class="tab2">Income</div> <!-- grabbed by incomeBtn -->
+                    <div class="tab3 active">All</div> <!-- grabbed by allBtn -->
+                </div>
+
+                <div class="hide" id="expense">
+                    <!-- grabbed by expenseEl -->
+                    <ul id="list"></ul> <!-- grabbed by expenseList -->
+                    <div class="input">
+                        <input type="text" id="expense-title-input" name="title" placeholder="Title">
+                        <input type="number" id="expense-amount-input" name="title" placeholder="Rs.0">
+                        <div class="add-expense">
+                            <img class="icon" src="icon/plus.png" alt="" srcset="">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hide" id="income">
+                    <!-- grabbed by incomeEl -->
+                    <ul id="list"></ul> <!-- grabbed by incomeList -->
+                    <div class="input">
+                        <input type="text" id="income-title-input" name="title" placeholder="Title">
+                        <input type="number" id="income-amount-input" name="title" placeholder="Rs.0">
+                        <div class="add-income">
+                            <img class="icon" src="icon/plus.png" alt="" srcset="">
+                        </div>
+                    </div>
+                </div>
+
+                <div id="all">
+                    <!-- grabbed by allEl -->
+                    <ul id="list"></ul> <!-- grabbed by allList -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="chart.js"></script>
+<script src="budget.js"></script>
+<!-- note: sometimes even flipping the link of js files above or below may help.!!!!!!!!!!!!!! -->
+
+</html>
